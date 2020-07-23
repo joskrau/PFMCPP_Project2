@@ -121,7 +121,7 @@ char bestLetter(int favoriteNumber, char cantBeChosen = 'x')
    return {};
 }
 /*
-/*
+/
  4)
  */
 
