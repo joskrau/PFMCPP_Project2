@@ -16,12 +16,13 @@ video: Chapter 2 - Part 3
  
  1) Write down the names of all of the primitives available in C++ (excluding wchar_t) here: 
  
- 
- 
- 
- 
- 
- 
+ int
+ bool
+ float
+ double 
+ void
+ char
+
  
  
  
@@ -56,10 +57,29 @@ void variableDeclarations()
 {
     //example:
     int number = 2; //declaration of a primitive named 'number' with an initial value of '2'
+    int a = 1;
+    int z = 26;
+    int y = 25;
+
+    bool isAbletonBest = true;
+    bool isTrue = false;
+    bool isFalse = true;
+
+    float pi = 3.14f;
+    float e = 2.718f;
+    float phi = 1.618f;
+
+    double one = 1.234;
+    double two = 5.678;
+    double three = 5.34827;
+
+    char random = 'A';
+    char notRandom = 'B';
+    char superRandom = 'C';
+
     
     
-    
-    ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+    ignoreUnused(number, a, z, y, isAbletonBest, isTrue, isFalse, pi, e, phi, one, two, three, random, notRandom, superRandom); //passing each variable declared to the ignoreUnused() function
 }
 /*
  10 functions
@@ -74,43 +94,109 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 /*
  1)
  */
+int carRentalCost(int tripLength, float gasCost, bool isRentalStoreOpen = true)
+{
+   ignoreUnused(tripLength, isRentalStoreOpen, gasCost);
 
+   return {};
+}
 /*
  2)
  */
 
+bool areYouEating(bool eating, char location)
+{
+   ignoreUnused(eating, location);
+
+   return {};
+}
 /*
  3)
  */
 
+char bestLetter(int favoriteNumber, char cantBeChosen = 'x')
+{
+   ignoreUnused(favoriteNumber, cantBeChosen);
+
+   return {};
+}
 /*
+/
  4)
  */
+
+bool audacityBestDaw(bool answer = true)
+{
+   ignoreUnused(answer);
+
+   return {};
+}
 
 /*
  5)
  */
 
+float currentTime(char location2, float time = 12.23f)
+{
+   ignoreUnused(location2, time);
+
+   return {};
+}
+
 /*
  6)
  */
 
+bool isPi3(bool areYouEngineer, bool response)
+{
+   ignoreUnused(areYouEngineer, response);
+  
+   return {};
+
+}
 /*
  7)
  */
 
+void resetBackend(bool clearDatabase, double dataBaseSize = 100.124)
+{
+   ignoreUnused(clearDatabase, dataBaseSize);
+  
+}
 /*
  8)
  */
 
+double heighEstimate(float babyHeight, char chromosome = 'Y')
+{
+   ignoreUnused(babyHeight, chromosome);
+  
+   return {};
+
+}
 /*
  9)
  */
+
+double weightEstimate(float babyWeight, bool goodDiet = false, float currentWeight = 135.0f)
+{
+   ignoreUnused(babyWeight, goodDiet, currentWeight);
+  
+   return {};
+
+}
 
 /*
  10)
  */
 
+char randomLetter(bool pray2RNG = false, int randomNumber = 10)
+{
+   ignoreUnused(pray2RNG, randomNumber);
+  
+   return {};
+
+}
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
 
@@ -131,27 +217,27 @@ int main()
     auto carRented = rentACar(6, 2); 
     
     //1)
-    
+    auto rentalCost = carRentalCost(2, 5.0f);
     //2)
-    
+    auto amIEating = areYouEating(false, 'c');
     //3)
-    
+    auto theBestLetter = bestLetter(10);
     //4)
-    
+    auto bestDaw = audacityBestDaw();
     //5)
-    
+    auto time = currentTime('c');
     //6)
-    
+    auto pi = isPi3(true, true);
     //7)
-    
+    resetBackend(true);
     //8)
-    
+    auto height = heighEstimate(1.2f);
     //9)
-    
+    auto weight = weightEstimate(23.5f);
     //10)
+    auto letter = randomLetter();
     
-    
-    ignoreUnused(carRented);
+    ignoreUnused(carRented, rentalCost, amIEating, theBestLetter, bestDaw, time, pi, height, weight, letter);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
